@@ -1,11 +1,23 @@
 {
   "name": "dolarimpuesto",
   "version": "1.0.0",
-  "description": "Dolar pagina web ",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "jc",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juancruzmarq/dolarImpuesto.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juancruzmarq/dolarImpuesto/issues"
+  },
+  "homepage": "https://github.com/juancruzmarq/dolarImpuesto#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
