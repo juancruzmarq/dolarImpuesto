@@ -7,9 +7,9 @@ const app = express()
 //Servir contenido estatico
 app.use(express.static('public'));
 
-// app.get('/', (req, res) => {
-//         res.send('<h1>Home</h1>')
-//     })
+app.get('/', (req, res) => {
+        express.static('./public/index');
+   })
 
 
 
