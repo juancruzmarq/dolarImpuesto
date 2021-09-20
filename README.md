@@ -6,4 +6,6 @@ https://dolar-impuesto.herokuapp.com/
 # Idea Figma design 
 ![alt text](https://github.com/juancruzmarq/dolarImpuesto/blob/master/Screenshot_5.png?raw=true)
 
-# web 
+# Web 
+
+![alt text](https://github.com/juancruzmarq/dolarImpuesto/blob/master/Screenshot_1.png?raw=true)
