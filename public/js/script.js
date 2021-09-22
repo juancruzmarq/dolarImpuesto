@@ -7,39 +7,49 @@ const retencion = document.getElementById('txtRetencion');
 const total = document.getElementById('txtTotal');
 const btnCalcular = document.getElementById('btnCalcular');
 
-const dolarOficial = 104.68;
+const api = 'https://api.bluelytics.com.ar/v2/latest'
 
-btnCalcular.onclick = function(){
-    const precioPesosNuevo = monto.value * dolarOficial
-    precioPesos.innerText = "$" + precioPesosNuevo.toFixed(2)
-    const impuestoPaisNuevo = precioPesosNuevo.toFixed(2) * 0.30
-    impuestoPais.innerText = "$" + impuestoPaisNuevo.toFixed(2)
-    const retencionNuevo = precioPesosNuevo.toFixed(2) * 0.35
-    retencion.innerText = "$" + retencionNuevo.toFixed(2)
-    total.innerText = "$" + (precioPesosNuevo + impuestoPaisNuevo + retencionNuevo) 
-}
 
-const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+async function getApi(){
 
-function switchTheme(e) {
-    if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
+    const response = await fetch(api);
+    const data = await response.json();
+    const dolarOficial =  data.oficial.value_sell
+    btnCalcular.onclick = function(){
+        const precioPesosNuevo = monto.value * dolarOficial
+        precioPesos.innerText = "$" + precioPesosNuevo.toFixed(2)
+        const impuestoPaisNuevo = precioPesosNuevo.toFixed(2) * 0.30
+        impuestoPais.innerText = "$" + impuestoPaisNuevo.toFixed(2)
+        const retencionNuevo = precioPesosNuevo.toFixed(2) * 0.35
+        retencion.innerText = "$" + retencionNuevo.toFixed(2)
+        total.innerText = "$" + (precioPesosNuevo + impuestoPaisNuevo + retencionNuevo) 
     }
-    else {
-        document.documentElement.setAttribute('data-theme', 'light');
-    }    
-}
 
-toggleSwitch.addEventListener('change', switchTheme, false);
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
-function switchTheme(e) {
-    if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark'); //add this
+    function switchTheme(e) {
+        if (e.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+        else {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }    
     }
-    else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light'); //add this
-    }    
+
+    toggleSwitch.addEventListener('change', switchTheme, false);
+
+    function switchTheme(e) {
+        if (e.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark'); //add this
+        }
+        else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light'); //add this
+        }    
+    }
+
 }
+
+getApi(api);
 
