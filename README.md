@@ -1,5 +1,5 @@
 # Dolar con impuesto
-Pagina web para calcular el costo total con el impuesto al dolar en argentina
+Pagina web para calcular el costo total con el impuesto al dolar en argentina api: https://bluelytics.com.ar/#!/api
 
 https://dolar-impuesto.herokuapp.com/ 
 
