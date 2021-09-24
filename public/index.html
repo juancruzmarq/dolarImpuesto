@@ -13,16 +13,25 @@
     <div class="container">
     <div class="row justify-content-center mt-5 p-3">
         <object data="./img/dollar.svg" width="80" height="80"></object>
+       
     </div>
-    <div class="row justify-content-center p-3">
-        Ingrese monto dolar
+    <div class="row justify-content-center p-3" id="ingreseMonto">
+        Ingrese monto Dolar
     </div>
     </div>
 
     <div class="container justify-content-center">
         <div class="row justify-content-center p-4">
             <div class="col-md-2 d-flex  justify-content-end ">
-                    <object data="./img/Vector.svg" width="20" height="20"></object>
+                    <div class="justify-content-center">
+                    <button class="d-flex justify-content-center align-items-center" id="btnIconoMoneda">
+                        
+                            <object data="./img/euro.svg" width="30" height="30" id="iconoMonedaEuro" style="display: none;" ></object>
+                            <object data="./img/Vector.svg" width="30" height="30" id="iconoMonedaDolar" ></object>
+                            <span style="padding: 5px;" id="spanMoneda">Dolar</span>
+                    </button>
+                    </div>
+                    
             </object>
             </div>
             <div class="col-md-4 d-flex justify-content-center align-items-center" >
